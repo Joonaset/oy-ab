@@ -1,8 +1,66 @@
-#header {
-    background-color: red;
+/* header styles */
+.header {
+    position: fixed;
+    position: center;
+  background-color: red;
+  position: top;
+  width: 100%;
+
 }
 
-#footer {
+.header > ul {
+    position: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.header li {
+    float: center;
+    border-left: 1px solid black;
+    display: inline-block;
+    padding: 20px;
+
+}
+.header li:last-child {
+    border-right: 1px solid black;
+}
+
+li a {
+   color: white;
+   display: block;
+   text-decoration: none;
+}
+
+li a:hover {
+    background-color: darkred;
+}
+
+
+/* content styles */
+
+div.content {
+    float: center;
+    top: 100px;
+    padding-top: 180px;
+    margin-top: 80px;
+    border-color: red;
+    border: solid 1px;
+    color: red;
+    background-color: blue;
+
+}
+
+/* categories styles */
+#categories {
+    position: left;
+    background-color: yellow;
+}
+
+/* footer styles */
+.footer {
+    position: fixed;
+    position: bottom;
     color: green;
+
 }
 
