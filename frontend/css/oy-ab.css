@@ -99,6 +99,5 @@ li a:hover:not(.active) {
     padding: 15px;
     float: right;
     overflow: hidden;
-    display: block;
 }
 
