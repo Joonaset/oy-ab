@@ -2,29 +2,35 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>oy-ab</title>
         <link href ="css/oy-ab.css" type="text/css" rel="stylesheet" \>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="header"><ul>
-                <li><a href="etusivu.html">Etusivu</a> </li>
-                <li><a href="yhteystiedot.html">Yhteystiedot</a> </li>
-                <li><a href="tiedot.html">Tietoja Meist&auml;</a> </li>
-            </ul>
-
+        <div class="header">
+            <h1>Header</h1>
         </div>
-        <div id="categories">
+        <div class="topnav">
+            <a href="etusivu.html">Etusivu</a>
+            <a href="yhteystiedot.html">Yhteystiedot</a>
+            <a href="tiedot.html">Tietoja Meist&auml;</a>
+        </div>
+        <div class="sidenav">
             <ul>
-                <li>Varaosat<ul>
-                        <li>Subcategory 1</li>
-                        <li>Subcategory 2</li>
-                    </ul>
-
-                    Tarvikkeet</li>
-                <li>Category 3</li>
+                <li><a class="active" href="#varaosat">Varaosat</a></li>
+                <li><a href="#tarvikkeet">Tarvikkeet</a></li>
+                <li><a href="#Muut">Muut tuotteet</a></li>
             </ul>
-
-
         </div>
         <div class="content">
             <p>haoeshusnuahiahuhaenthaeuhnthuatbdue</p>
@@ -33,7 +39,7 @@
             <p>snoathuesntheoaunthakbuabsntuabab</p>
 
         </div>
-        <div class='footer'>
+        <div class="footer">
             T&auml;nne voi laittaa jotain hienoa teksti&auml; esim. yhteystiedot tai copyrighteja.
         </div>
     </body>

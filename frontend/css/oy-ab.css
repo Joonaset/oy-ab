@@ -1,66 +1,91 @@
 /* header styles */
-.header {
+* {
+    box-sizing: border-box;
+}
+.header{
+    text-align: center;
+    padding: 15px;
+}
+.topnav {
+    overflow: hidden;
     position: fixed;
-    position: center;
-  background-color: red;
-  position: top;
-  width: 100%;
-
+    background-color: darkred;
+    width: 100%;
+    margin-top: 0px;
+    top: 0;
 }
 
-.header > ul {
+.topnav > ul {
     position: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.header li {
+.topnav li {
     float: center;
     border-left: 1px solid black;
     display: inline-block;
     padding: 20px;
 
 }
-.header li:last-child {
+
+.topnav a {
+    float: left;
+    text-align: center;
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 14px 16px;
     border-right: 1px solid black;
 }
 
-li a {
-   color: white;
-   display: block;
-   text-decoration: none;
-}
-
-li a:hover {
-    background-color: darkred;
+.topnav a:hover {
+    background-color: red;
+    color: #dddddd;
+    text-decoration: none;
 }
 
 
 /* content styles */
 
-div.content {
-    float: center;
+.content {
+    width: 85%;
+    padding:1px 16px;
+    height:1000px;
+    float: right;
     top: 100px;
-    padding-top: 180px;
-    margin-top: 80px;
-    border-color: red;
     border: solid 1px;
-    color: red;
-    background-color: blue;
+    color: #dddddd;
+    border-color: red;
+    background-color: gray;
 
 }
 
 /* categories styles */
-#categories {
-    position: left;
-    background-color: yellow;
+.sidenav ul{
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0px;
+    height: 100%;
+    color: #dddddd;
+    background-color: dimgrey;
+    z-index: -1;
+    width: 15%;
+    overflow: auto;
+    display: block;
+    padding-top: 4%;
 }
-
+.sidenav li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
 /* footer styles */
 .footer {
-    position: fixed;
-    position: bottom;
     color: green;
-
+    padding: 15px;
+    float: right;
 }
 
