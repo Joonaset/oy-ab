@@ -74,13 +74,22 @@
     z-index: -1;
     width: 15%;
     overflow: auto;
-    display: block;
-    padding-top: 4%;
+    padding-top: 5em;
 }
 .sidenav li a {
+    display: block;
     color: white;
     text-decoration: none;
     padding: 8px 16px;
+}
+.active{
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
 }
 /* footer styles */
 .footer {
