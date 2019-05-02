@@ -2,10 +2,6 @@
 * {
     box-sizing: border-box;
 }
-.header{
-    text-align: center;
-    padding: 15px;
-}
 .topnav {
     overflow: hidden;
     position: fixed;
@@ -14,6 +10,11 @@
     margin-top: 0px;
     top: 0;
 }
+.topnav > h1{
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
 
 .topnav > ul {
     position: center;
@@ -21,7 +22,7 @@
     margin: 0;
     padding: 0;
 }
-.topnav li {
+.topnav > li {
     float: center;
     border-left: 1px solid black;
     display: inline-block;
@@ -35,14 +36,19 @@
     color: white;
     display: block;
     text-decoration: none;
-    padding: 14px 16px;
+    padding: 16px 16px;
     border-right: 1px solid black;
 }
 
-.topnav a:hover {
+.topnav a:hover:not(.active) {
     background-color: red;
     color: #dddddd;
     text-decoration: none;
+}
+.topnav .active{
+    background-color: #480000;
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -50,14 +56,14 @@
 
 .content {
     width: 85%;
-    padding:1px 16px;
+    padding:5px 16px;
     height:1000px;
     float: right;
-    top: 100px;
     border: solid 1px;
     color: #dddddd;
     border-color: red;
     background-color: gray;
+    display: block;
 
 }
 
@@ -75,6 +81,7 @@
     width: 15%;
     overflow: auto;
     padding-top: 5em;
+    display: block;
 }
 .sidenav li a {
     display: block;
@@ -82,13 +89,8 @@
     text-decoration: none;
     padding: 8px 16px;
 }
-.active{
-    background-color: gray;
-    color: white;
-    text-decoration: none;
-}
 li a:hover:not(.active) {
-    background-color: #555;
+    background-color: gray;
     color: white;
 }
 /* footer styles */
@@ -96,5 +98,7 @@ li a:hover:not(.active) {
     color: green;
     padding: 15px;
     float: right;
+    overflow: hidden;
+    display: block;
 }
 
