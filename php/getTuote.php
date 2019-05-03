@@ -1,19 +1,22 @@
 <?php
-
-include 'DBController.php';
+include "DBController.php";
 $db_handle = new DBController();
 
-//mysqli_set_charset($db_handle->db(), 'utf8');
-$sql = "SELECT * FROM tuotetyyppi ORDER BY tuotetunnus ASC";
-// do some validation here to ensure id is safe
+$sql = "SELECT * FROM tuotetyyppi WHERE tuotetunnus = ?";
+
+//prepared statements
 $prepare = $db_handle->db()->prepare($sql);
+
+//$_POST saa parametrin formista ja on näkymätön muille
+$prepare->bind_param( $_POST['tuotetunnus']);
+
 $prepare->execute();
 $result = $prepare->get_result();
 
 while ($row = mysqli_fetch_assoc($result)) {
-    //array_push($images,$row);
     $productinfo[] = json_encode($row);
 }
+
 $encoded = json_encode($productinfo);
 echo $encoded;
 ?>
