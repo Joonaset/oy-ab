@@ -13,11 +13,11 @@ window.onload = function () {
                 string = string + ' ' + parse.kuva;
                 tuotteet.push(parse);
             });
-            document.getElementById("images").innerHTML = string;
+            //document.getElementById("images").innerHTML = string;
             createProduct(tuotteet);
         }
     };
-    xmlhttp.open("GET", "../../php/getAlltuoteinfo.php", true);
+    xmlhttp.open("GET", "../php/getAlltuoteinfo.php", true);
     xmlhttp.send();
 };
 //funktio joka luo kuvat sivulle ja tarkoitus laajentaa että luo vasemmalta oikealle kaikista tuotteista kuvat
