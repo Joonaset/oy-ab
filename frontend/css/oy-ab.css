@@ -100,4 +100,12 @@ li a:hover:not(.active) {
     float: right;
     overflow: hidden;
 }
+#loginForm ul{
+    list-style-type: none;
+    display: block;
+}
+#loginForm li input{
+    display: block;
+    margin-bottom: 10px;
+}
 
