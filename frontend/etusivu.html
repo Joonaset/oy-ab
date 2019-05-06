@@ -29,9 +29,31 @@
         </div>
         <div class="sidenav">
             <ul>
-                <li><a href="#varaosat">Varaosat</a></li>
-                <li><a href="#tarvikkeet">Tarvikkeet</a></li>
-                <li><a href="#Muut">Muut tuotteet</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Varaosat</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Tarvikkeet</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Muut tuotteet</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+
             </ul>
         </div>
 
@@ -51,7 +73,7 @@
             <form id="loginForm" method="POST" action="../backend/login.php">
                 <ul>
                     <li>Email: <input type='email' id="email" name='email' placeholder="email"> </li>
-                    <li>Password: <input type='password' id="pass" name='pass'></li>
+                    <li>Password: <input type='password' id="pass" name='pass' placeholder="Password"></li>
                     <li><input type="submit" value="login" id="submit"></li>
                 </ul>
             </form>

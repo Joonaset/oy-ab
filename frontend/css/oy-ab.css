@@ -89,8 +89,35 @@
     text-decoration: none;
     padding: 8px 16px;
 }
-li a:hover:not(.active) {
+.sidenav li a:hover, .dropdown:hover .dropbtn{
+    background-color:red;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
     background-color: gray;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     text-align: left;
+ }
+
+.dropdown-content a:hover {
+    background-color: red;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+li a:hover:not(.active) {
+    background-color: darkgrey;
     color: white;
 }
 /* footer styles */
@@ -99,5 +126,13 @@ li a:hover:not(.active) {
     padding: 15px;
     float: right;
     overflow: hidden;
+}
+#loginForm ul{
+    list-style-type: none;
+    display: block;
+}
+#loginForm li input{
+    display: block;
+    margin-bottom: 10px;
 }
 
