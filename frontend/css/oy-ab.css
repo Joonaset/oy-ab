@@ -110,14 +110,14 @@
  }
 
 .dropdown-content a:hover {
-    background-color: gray;
+    background-color: red;
 }
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 li a:hover:not(.active) {
-    background-color: gray;
+    background-color: darkgrey;
     color: white;
 }
 /* footer styles */
