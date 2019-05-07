@@ -8,7 +8,7 @@ class DBController
     private $username="test";
     private $password="qwerty1";
     private $servername="localhost";
-    private $database="oy-ab";
+    private $database="oyab";
 
     function __construct() {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

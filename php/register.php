@@ -2,15 +2,25 @@
 include 'DBController.php';
 $db_handle = new DBController();
 
-$ID = $_POST["remail"];
-$PASS = $_POST["rpass"];
-$PASS2 = $_POST["rpass2"];
-$ADDR = $_POST["address"];
+//Muokkaa arvot niin että kommenteissa olevat arvot tulevat voimaan
+$ID = "testaaja@testi.fi";//$_POST["remail"];
+$PASS = "salis";//$_POST["rpass"];
+$PASS2 = "salis";//$_POST["rpass2"];
+$ADDR = "osoitekuja 3";//$_POST["address"];
+// Preparing statement
+$sql = "INSERT INTO kayttaja (Sahkoposti, Salasana, Osoite) VALUES (?, ?, ?)";
 
+// Check that password was given right
 if ($PASS == $PASS2) {
+    if (!($prepare = $db_handle->db()->prepare($sql))) {
+        echo "Preparation failed";
+    }
+    // Make authentication key so that password is not saved on the server
     $AUTH = base64_encode($ID.$PASS);
-//    $query = $dbhandle->db()->query("INSERT INTO kayttaja (Sahkoposti, Salasana, Osoite) VALUES ($ID, $ID.$PASS, $ADDR))";
-    echo "<script><\script>";
+    $prepare->bind_param("sss", $ID, $AUTH, $ADDR);
+    if (!($prepare->execute())) {
+        echo "shit database";
+    }
     echo "Käyttäjä rekisteröity osoitteella $ID";
 }
 else {
