@@ -23,7 +23,7 @@
     padding: 0;
 }
 .topnav > li {
-    float: center;
+    float: left;
     border-left: 1px solid black;
     display: inline-block;
     padding: 20px;
@@ -64,6 +64,22 @@
     border-color: red;
     background-color: gray;
     display: block;
+
+}
+.tietoa {
+    width: 85%;
+    padding:5px 16px;
+    float: left;
+    position: absolute;
+    height: 100%;
+    border: solid 1px;
+    color: #dddddd;
+    border-color: red;
+    display: block;
+    margin: 100px;
+    margin-top: 80px;
+    z-index: -1;
+    background-color: #4d4d4d;
 
 }
 
