@@ -15,6 +15,10 @@ window.onload = function () {
             });
             //document.getElementById("images").innerHTML = string;
             createProduct(tuotteet);
+            var tuote = new Tuotelajittelija(tuotteet);
+            tuote.lajitteleTarvikkeet();
+            tuote.lajitteleVaraosat();
+            tuote.lajitteleMuut();
         }
     };
     xmlhttp.open("GET", "../php/getAlltuoteinfo.php", true);
