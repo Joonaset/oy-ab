@@ -10,14 +10,17 @@
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+DROP TABLE IF DATABASE IF EXISTS 'oy-ab';
+CREATE DATABASE 'oy-ab';
+USE 'oy-ab';
 
 -- Dumping structure for taulu oy-ab.kayttaja
 CREATE TABLE IF NOT EXISTS `kayttaja` (
   `Sahkoposti` varchar(50) NOT NULL,
   `Salasana` varchar(50) NOT NULL,
   `Osoite` varchar(50) NOT NULL,
-  `Oikeudet` int(11) NOT NULL,
-  `Tilausnumero` int(11) NOT NULL,
+  `Oikeudet` int(11) DEFAULT 1,
+  `Tilausnumero` int(11),
   PRIMARY KEY (`Sahkoposti`),
   KEY `Tilausnumero` (`Tilausnumero`),
   CONSTRAINT `kayttaja_ibfk_1` FOREIGN KEY (`Tilausnumero`) REFERENCES `tilaus` (`Tilausnumero`)
