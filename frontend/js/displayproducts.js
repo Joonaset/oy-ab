@@ -16,9 +16,13 @@ window.onload = function () {
             //document.getElementById("images").innerHTML = string;
             createProduct(tuotteet);
             var tuote = new Tuotelajittelija(tuotteet);
-            tuote.lajitteleTarvikkeet();
+
             tuote.lajitteleVaraosat();
+            tuote.lajitteleTarvikkeet();
             tuote.lajitteleMuut();
+            tuote.makeVaraosat(tuote.getVaraosat());
+            tuote.makeTarvikkeet(tuote.getTarvikkeet());
+            tuote.makeMuut(tuote.getMuut());
         }
     };
     xmlhttp.open("GET", "../php/getAlltuoteinfo.php", true);
