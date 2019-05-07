@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 $encoded = json_encode($user);
 print $encoded;
 echo "Olet kirjautunut sisään";
-return true;
+return $encoded;
 
 
 ?>
