@@ -30,7 +30,7 @@
         <div class="sidenav">
             <ul>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Varaosat</a>
+                    <a id="varaosat-link" href="javascript:void(0)" class="dropbtn" onclick="hide('varaosat-link')">Varaosat</a>
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
@@ -38,7 +38,7 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Tarvikkeet</a>
+                    <a id="tarvikkeet-link" href="javascript:void(0)" class="dropbtn" onclick="hide('tarvikkeet-link')">Tarvikkeet</a>
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
@@ -46,7 +46,7 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Muut tuotteet</a>
+                    <a id="muut-link" href="javascript:void(0)" class="dropbtn" onclick="hide('muut-link')">Muut tuotteet</a>
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
@@ -62,9 +62,11 @@
             <p>haoeshusnuahiahuhaenthaeuhnthuatbdue</p>
             //testi melto
             <div class="tuote-list">
-                <h2>Tuotteet</h2>
-                <div id="tuotteet">
-                </div>
+                <h2 id="tuoteotsikko">Kaikki tuotteet</h2>
+                <div id="tuotteet"></div>
+                <div id="varaosat-lista" style="display: none"></div>
+                <div id="tarvikkeet-lista" style="display: none"></div>
+                <div id="muut-lista" style="display: none"></div>
             </div>
 
             <p>snoathuesntheoaunthakbuabsntuabab</p>
@@ -85,6 +87,31 @@
         <!-- <script src="js/login.js"></script> -->
         <script src="js/tuotteidenlajittelu.js"></script>
         <script src="js/displayproducts.js"></script>
+        <script>
+            function hide(id) {
+                if (id === document.getElementById("varaosat-link").id) {
+                    document.getElementById("tuotteet").style.display = "none";
+                    document.getElementById("varaosat-lista").style.display = "block";
+                    document.getElementById("tarvikkeet-lista").style.display = "none";
+                    document.getElementById("muut-lista").style.display = "none";
+                    document.getElementById("tuoteotsikko").innerText = "Varaosat";
+                }
+                else if (id === document.getElementById("tarvikkeet-link").id) {
+                    document.getElementById("tuotteet").style.display = "none";
+                    document.getElementById("varaosat-lista").style.display = "none";
+                    document.getElementById("tarvikkeet-lista").style.display = "block";
+                    document.getElementById("muut-lista").style.display = "none";
+                    document.getElementById("tuoteotsikko").innerText = "Tarvikkeet";
+                }
+                else if (id === document.getElementById("muut-link").id) {
+                    document.getElementById("tuotteet").style.display = "none";
+                    document.getElementById("varaosat-lista").style.display = "none";
+                    document.getElementById("tarvikkeet-lista").style.display = "none";
+                    document.getElementById("muut-lista").style.display = "block";
+                    document.getElementById("tuoteotsikko").innerText = "Muut tuotteet";
+                }
+            }
+        </script>
     </body>
 </html>
 
