@@ -49,7 +49,7 @@ function createProduct(tuotteet) {
             div.appendChild(a[i]);
         }
 
-        div.setAttribute("class","card");
+        div.setAttribute("class","");
 
         img.setAttribute("src",tuote.Kuva);
         img.setAttribute("width",200);
