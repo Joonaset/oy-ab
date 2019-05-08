@@ -1,7 +1,7 @@
-/* header styles */
 * {
     box-sizing: border-box;
 }
+/* topnav styles */
 .topnav {
     overflow: hidden;
     position: fixed;
@@ -83,7 +83,7 @@
 
 }
 
-/* categories styles */
+/* sidenav styles */
 .sidenav ul{
     list-style-type: none;
     position: fixed;
@@ -143,11 +143,11 @@ li a:hover:not(.active) {
     float: right;
     overflow: hidden;
 }
-#loginForm ul{
+#loginForm ul, #registerForm ul{
     list-style-type: none;
     display: block;
 }
-#loginForm li input{
+#loginForm li input, #registerForm li input{
     display: block;
     margin-bottom: 10px;
 }
