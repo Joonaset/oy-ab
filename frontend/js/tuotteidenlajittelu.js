@@ -54,11 +54,14 @@ function Tuotelajittelija(tuotteet) {
             var h1 = document.createElement("h1");
             var price = document.createElement("price");
             var details = document.createElement("p");
-            var pforb = document.createElement("p");
+            var divbutton = document.createElement("div");
             var button = document.createElement("button");
-            pforb.appendChild(button);
+            divbutton.appendChild(button);
 
-            var a = [img,h1,price,details,pforb];
+            divbutton.setAttribute("id","addproduct");
+            divbutton.setAttribute("class","");
+
+            var a = [img,h1,price,details,divbutton];
 
             for (let i = 0; i < a.length; i++) {
                 div.appendChild(a[i]);
@@ -79,6 +82,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
 
             var list = document.createElement("li");
 
@@ -100,11 +104,14 @@ function Tuotelajittelija(tuotteet) {
             var h1 = document.createElement("h1");
             var price = document.createElement("price");
             var details = document.createElement("p");
-            var pforb = document.createElement("p");
+            var divbutton = document.createElement("div");
             var button = document.createElement("button");
-            pforb.appendChild(button);
+            divbutton.appendChild(button);
 
-            var a = [img,h1,price,details,pforb];
+            divbutton.setAttribute("id","addproduct");
+            divbutton.setAttribute("class","");
+
+            var a = [img,h1,price,details,divbutton];
 
             for (let i = 0; i < a.length; i++) {
                 div.appendChild(a[i]);
@@ -125,6 +132,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
 
             var list = document.createElement("li");
 
@@ -145,11 +153,14 @@ function Tuotelajittelija(tuotteet) {
             var h1 = document.createElement("h1");
             var price = document.createElement("price");
             var details = document.createElement("p");
-            var pforb = document.createElement("p");
+            var divbutton = document.createElement("div");
             var button = document.createElement("button");
-            pforb.appendChild(button);
+            divbutton.appendChild(button);
 
-            var a = [img,h1,price,details,pforb];
+            divbutton.setAttribute("id","addproduct");
+            divbutton.setAttribute("class","");
+
+            var a = [img,h1,price,details,divbutton];
 
             for (let i = 0; i < a.length; i++) {
                 div.appendChild(a[i]);
@@ -170,6 +181,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
 
             var list = document.createElement("li");
 
