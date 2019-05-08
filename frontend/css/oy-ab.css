@@ -9,6 +9,7 @@
     width: 100%;
     margin-top: 0px;
     top: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .topnav > h1{
     overflow: hidden;
@@ -138,6 +139,7 @@ li a:hover:not(.active) {
 }
 /* footer styles */
 .footer {
+    display: block;
     color: green;
     padding: 15px;
     float: right;
@@ -151,4 +153,33 @@ li a:hover:not(.active) {
     display: block;
     margin-bottom: 10px;
 }
-
+.tuoteboxi{
+    display: block;
+    min-width: 400px;
+    max-width: 70%;
+    background-color: white;
+    color: black;
+    margin: 30px;
+    padding: 10px;
+    padding-bottom: 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+.tuoteboxi img{
+    width: 20%;
+    height: auto;
+    display: inline-block;
+    margin: 0px;
+}
+.tuoteboxi>p#details{
+    display: block
+    position: relative;
+    left: 25%;
+    : 100%;
+}
+.tuoteboxi>p#button{
+    display: inline-block;
+    float: right;
+}
+.productol{
+    list-style-type: none;
+}

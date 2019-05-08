@@ -64,8 +64,9 @@ function Tuotelajittelija(tuotteet) {
                 div.appendChild(a[i]);
             }
 
-            div.setAttribute("class","");
-
+            olproducts.setAttribute("class", "productol")
+            div.setAttribute("class","tuoteboxi");
+            details.setAttribute("id", "details")
             img.setAttribute("src",tuote.Kuva);
             img.setAttribute("width",200);
             img.setAttribute("height",200);
@@ -109,8 +110,9 @@ function Tuotelajittelija(tuotteet) {
                 div.appendChild(a[i]);
             }
 
-            div.setAttribute("class","");
-
+            olproducts.setAttribute("class", "productol")
+            div.setAttribute("class","tuoteboxi");
+            details.setAttribute("id", "details")
             img.setAttribute("src",tuote.Kuva);
             img.setAttribute("width",200);
             img.setAttribute("height",200);
@@ -153,8 +155,9 @@ function Tuotelajittelija(tuotteet) {
                 div.appendChild(a[i]);
             }
 
-            div.setAttribute("class","");
-
+            olproducts.setAttribute("class", "productol")
+            div.setAttribute("class","tuoteboxi");
+            details.setAttribute("id", "details")
             img.setAttribute("src",tuote.Kuva);
             img.setAttribute("width",200);
             img.setAttribute("height",200);
