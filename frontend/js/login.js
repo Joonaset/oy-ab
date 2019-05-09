@@ -22,9 +22,10 @@ function ajaxLogin() {
             }
 
         }
-    }
+    };
     console.log("sending request with values: "+ params);
     ajaxRequest.open("POST", "../php/login.php", true);
+    ajaxRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajaxRequest.send(params);
 
 }

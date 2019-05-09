@@ -3,10 +3,10 @@ include 'DBController.php';
 $db_handle = new DBController();
 
 //Muokkaa arvot niin että kommenteissa olevat arvot tulevat voimaan
-$ID = "testeri@testi.fi";//$_POST["remail"]
-$PASS = "salis";//$_POST["rpass"];
-$PASS2 = "salis";//$_POST["rpass2"];
-$ADDR = "osoitekuja 3";//$_POST["address"];
+$ID = $_POST["remail"];
+$PASS = $_POST["rpass"];
+$PASS2 = $_POST["rpass2"];
+$ADDR = $_POST["address"];
 // Preparing statement
 $sql = "INSERT INTO kayttaja (Sahkoposti, Salasana, Osoite) VALUES (?, ?, ?)";
 
@@ -22,10 +22,9 @@ if ($PASS == $PASS2) {
         echo "shit database";
     }
     echo "Käyttäjä rekisteröity osoitteella $ID";
-    header("Location: index.php");
+    header("Location: ../frontend/kirjaudu2.html");
 }
 else {
     echo "Rekisteröinti ei onnistunut";
 }
-
 ?>
