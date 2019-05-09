@@ -3,7 +3,7 @@ include 'DBController.php';
 $db_handle = new DBController();
 
 //Muokkaa arvot niin että kommenteissa olevat arvot tulevat voimaan
-$ID = "testaaja@testi.fi";//$_POST["remail"];
+$ID = "testeri@testi.fi";//$_POST["remail"]
 $PASS = "salis";//$_POST["rpass"];
 $PASS2 = "salis";//$_POST["rpass2"];
 $ADDR = "osoitekuja 3";//$_POST["address"];
@@ -22,6 +22,7 @@ if ($PASS == $PASS2) {
         echo "shit database";
     }
     echo "Käyttäjä rekisteröity osoitteella $ID";
+    header("Location: index.php");
 }
 else {
     echo "Rekisteröinti ei onnistunut";

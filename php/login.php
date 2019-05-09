@@ -15,15 +15,13 @@ if (!($prepare->execute())) {
 }
 $result = $prepare->get_result();
 if ($result->num_rows === 0) {
-    echo "Väärä käyttäjätunnus tai salasana";
+    echo "false";
     return false;
 }
 while ($row = mysqli_fetch_assoc($result)) {
     $user[] = json_encode($row);
 }
 $encoded = json_encode($user);
-echo "<script>localStorage.setItem('user', $ID)</script>"
-echo "Kirjauduttu sisään";
-return $encoded;
+echo "true"
 
 ?>
