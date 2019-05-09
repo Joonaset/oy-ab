@@ -78,7 +78,7 @@ function Tuotelajittelija(tuotteet) {
             h1.innerText = tuote.Nimi;
 
             price.setAttribute("class","price");
-            price.innerText = tuote.Hinta;
+            price.innerText = tuote.Hinta +"€";
 
             details.innerText = "Tuotekuvaus";
 
@@ -129,7 +129,7 @@ function Tuotelajittelija(tuotteet) {
             h1.innerText = tuote.Nimi;
 
             price.setAttribute("class","price");
-            price.innerText = tuote.Hinta;
+            price.innerText = tuote.Hinta +"€";
 
             details.innerText = "Tuotekuvaus";
 
@@ -179,7 +179,7 @@ function Tuotelajittelija(tuotteet) {
             h1.innerText = tuote.Nimi;
 
             price.setAttribute("class","price");
-            price.innerText = tuote.Hinta;
+            price.innerText = tuote.Hinta +"€";
 
             details.innerText = "Tuotekuvaus";
 
