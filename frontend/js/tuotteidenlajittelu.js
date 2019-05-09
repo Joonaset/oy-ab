@@ -83,7 +83,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
-            button.setAttribute("onclick","addCart("+tuote+")");
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+","+JSON.stringify(tuote)+")");
 
             var list = document.createElement("li");
 
@@ -134,7 +134,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
-            button.setAttribute("onclick","addCart("+tuote+")");
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+","+JSON.stringify(tuote)+")");
 
             var list = document.createElement("li");
 
@@ -184,7 +184,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
-            button.setAttribute("onclick","addCart("+tuote+")");
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+","+JSON.stringify(tuote)+")");
 
             var list = document.createElement("li");
 

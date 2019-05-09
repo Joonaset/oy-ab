@@ -60,7 +60,10 @@
     var keys = [];
     var idlist = [];
     keys = Object.keys(localStorage);
-    keys.pop();
+    var index = keys.indexOf("user");
+    if (index > -1) {
+        keys.splice(index, 1);
+    }
     keys.forEach(key => {
         //alert(obj);
         tuotteet.push(JSON.parse(localStorage.getItem(key)));
