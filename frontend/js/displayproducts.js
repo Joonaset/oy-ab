@@ -51,11 +51,11 @@ function createProduct(tuotteet) {
         for (let i = 0; i < a.length; i++) {
             div.appendChild(a[i]);
         }
-
+        price.setAttribute("class","price");
         olproducts.setAttribute("class", "productol")
         div.setAttribute("class","tuoteboxi");
         details.setAttribute("id", "details");
-        pforb.setAttribute("id", "button");
+        divbutton.setAttribute("id", "button");
         img.setAttribute("src",tuote.Kuva);
         img.setAttribute("width",200);
         img.setAttribute("height",200);
