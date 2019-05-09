@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>oy-ab: Kirjaudu</title>
+        <link href ="css/oy-ab.css" type="text/css" rel="stylesheet" \>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <script src="js/login.js"></script>
+        <div class="header">
+            <h1>Header</h1>
+        </div>
+        <div class="topnav">
+            <a class="active" href="etusivu.html">Etusivu</a>
+            <a href="yhteystiedot.html">Yhteystiedot</a>
+            <a href="tiedot.html">Tietoja Meistä</a>
+            <h1>OyAb.com</h1>
+        </div>
+        <div class="sidenav">
+            <ul>
+                <li><a href="#varaosat">Varaosat</a></li>
+                <li><a href="#tarvikkeet">Tarvikkeet</a></li>
+                <li><a href="#Muut">Muut tuotteet</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+
+            <p>Kirjaudu Sis&auml;&auml;n</p>
+            <fieldset><legend><LOG-IN></legend>
+
+            <form id="loginForm" method="POST" action="">
+                <ul>
+                    <li>Email: <input type='email' id="email" name='email' placeholder="email"> </li>
+                    <li>Password: <input type='password' id="pass" name='pass'></li>
+                    <li><input type="button" value="ajaxKirjaudu" id="logsub"></li>
+                </ul>
+            </form>
+
+            <p>Rekister&ouml;idy</p>
+
+            <fieldset><legend><REGISTER></legend>
+                <form id="registerForm" method="POST" action="../php/register.php">
+                    <ul>
+                        <li>Email: <input type='email' id="remail" name="remail" placeholder="email"></li>
+                        <li>Osoite: <input type="text" id="address" name="address" placeholder="Osoite"></li>
+                        <li>Password: <input type="password" id="rpass" name="rpass"</li>
+                        <li>Give Password again: <input type="password" id="rpass2" name="rpass2"</li>
+                        <li><input type="submit" value="Rekister&ouml;idy" id="regsub"</li>
+                    </ul>
+
+        </div>
+        <div class="footer">
+            Tänne voi laittaa jotain hienoa tekstiä esim. yhteystiedot tai copyrighteja.
+        </div>
+    </body>
+</html>
+
