@@ -155,8 +155,8 @@ li a:hover:not(.active) {
 }
 .tuoteboxi{
     display: block;
-    min-width: 400px;
-    max-width: 70%;
+    width: 1200px;
+    height: 400px;
     background-color: white;
     color: black;
     margin: 30px;
@@ -169,16 +169,54 @@ li a:hover:not(.active) {
     height: auto;
     display: inline-block;
     margin: 0px;
+    margin-top: 30px;
 }
 .tuoteboxi>p#details{
-    display: block
-    position: relative;
-    left: 25%;
-    : 100%;
-}
-.tuoteboxi>p#button{
     display: inline-block;
-    float: right;
+    position: relative;
+    left: 238px;
+    bottom: 265px;
+}
+.tuoteboxi>div#button{
+    display: block;
+    position: relative;
+    left: 1000px;
+    bottom: 120px;
+}
+.tuoteboxi button{
+    border: none;
+    background-color: #ff0003;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+
+}
+.tuoteboxi button:hover{
+    background-color: rgba(255, 0, 0, 0.71);
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+.tuoteboxi button:active{
+    background-color: #7d0000;
+    -webkit-transition-duration: 0s; /* Safari */
+    transition-duration: 0s;
+}
+.tuoteboxi>h1{
+    display: inline-block;
+    position: relative;
+    top: -60px;
+}
+.tuoteboxi>.price{
+    display: block;
+    position: relative;
+    left: 1000px;
+    bottom: 120px;
+    font-size: 60px;
+
 }
 .productol{
     list-style-type: none;

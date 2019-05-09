@@ -51,8 +51,8 @@ function createProduct(tuotteet) {
         for (let i = 0; i < a.length; i++) {
             div.appendChild(a[i]);
         }
-
-        olproducts.setAttribute("class", "productol");
+        price.setAttribute("class","price");
+        olproducts.setAttribute("class", "productol")
         div.setAttribute("class","tuoteboxi");
         details.setAttribute("id", "details");
         divbutton.setAttribute("id", "button");
