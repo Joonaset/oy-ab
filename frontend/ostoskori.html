@@ -35,13 +35,17 @@
     <div class="ostoskori">
         <h2 id="ostoskori-otsikko">Ostoskorin sisältö:</h2>
         <div id="ostoskori-lista">
+
         </div>
         <div id="ostoskori-napit" class="row">
             <div class="col">
-                <button>Delete all products</button>
+                <button onclick="deleteAll()">Delete all products</button>
             </div>
             <div class="col">
                 <button>Checkout</button>
+            </div>
+            <div class="col">
+                <p id="hinta"></p>
             </div>
         </div>
     </div>
@@ -54,7 +58,9 @@
 
     var tuotteet = [];
     var keys = [];
+    var idlist = [];
     keys = Object.keys(localStorage);
+    keys.pop();
     keys.forEach(key => {
         //alert(obj);
         tuotteet.push(JSON.parse(localStorage.getItem(key)));
@@ -78,16 +84,26 @@
        var alldiv = [kuva,nimi,maara,hinta,poista];
        var allchild = [kuvaimg,nimip,maarainput,hintap,poistanappi];
 
-       //tuotteen infot laitetaan elementtejen sisään
+        //tuotteen infot laitetaan elementtejen sisään
         nimip.innerText = tuote.Nimi;
         hintap.innerText = tuote.Hinta + " €";
+        hintap.setAttribute("id",tuote.Tuotetunnus);
+
+        //imagen attributet
         kuvaimg.setAttribute("src", tuote.Kuva);
         kuvaimg.setAttribute("width",200);
         kuvaimg.setAttribute("height",200);
+
+        //määrä inputin atributet
         maarainput.setAttribute("type","number");
         maarainput.setAttribute("min","1");
         maarainput.setAttribute("value","1");
+        maarainput.setAttribute("id",tuote.Nimi);
+        maarainput.setAttribute("onchange","paivitaHinta("+tuote.Tuotetunnus+","+tuote.Nimi+","+tuote.Hinta+")");
+
+        //delete button alustus
         poistanappi.innerText = 'Delete item';
+        poistanappi.setAttribute("onclick","deleteButton("+tuote.Tuotetunnus+")");
 
        //kaikki divit jotka luodaan saavat classin col
        alldiv.forEach(element => {
@@ -96,9 +112,39 @@
             i++;
             list.appendChild(element);
        });
+       //lisätään vielä kaikkien tuotteiden hinnat listaan hinnat
+       idlist.push(tuote.Tuotetunnus);
 
        ostoskori.appendChild(list);
     });
+    ostoskorinHinta(idlist);
+
+    //funktio joka päivittää hinnan kun tuotteen määrää vaihetaan
+    function paivitaHinta(id,nimi,hinta) {
+        var input = document.getElementById(nimi.id).value;
+        var uusihinta = hinta * input;
+        document.getElementById(id).innerText = uusihinta +" €";
+        ostoskorinHinta(idlist);
+    }
+    //funktio joka laskee kaikkien tuotteiden hinnan
+    function ostoskorinHinta(idlist) {
+        var total = 0;
+
+        idlist.forEach(id => {
+            total += parseFloat(document.getElementById(id).innerText);
+        });
+        document.getElementById("hinta").innerText = "Yhteensä: "+total+" €";
+    }
+    function deleteButton(id) {
+        localStorage.removeItem(id);
+        location.reload();
+    }
+    function deleteAll() {
+        idlist.forEach(id => {
+            localStorage.removeItem(id);
+        });
+        location.reload();
+    }
 </script>
 <!-- <script src="js/login.js"></script> -->
 </body>

@@ -81,13 +81,20 @@
         <script src="js/displayproducts.js"></script>
         <script>
             function addCart(id,tuote) {
-                if (localStorage.getItem(id) === JSON.stringify(tuote)) {
-                    alert("tuote on jo ostoskorissa")
+                if(localStorage.getItem("user") === null) {
+                    alert("Kirjaudu Sis&auml;&auml;n");
+                    window.location = "kirjaudu2.html";
+
                 }
                 else {
-                    localStorage.setItem(id, JSON.stringify(tuote));
-                    localStorage.getItem(id);
-                    alert("tuote lisätty ostoskoriin")
+                    if (localStorage.getItem(id) === JSON.stringify(tuote)) {
+                        alert("tuote on jo ostoskorissa")
+                    }
+                    else {
+                        localStorage.setItem(id, JSON.stringify(tuote));
+                        localStorage.getItem(id);
+                        alert("tuote lisätty ostoskoriin")
+                    }
                 }
             }
         </script>
