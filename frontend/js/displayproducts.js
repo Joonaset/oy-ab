@@ -52,10 +52,10 @@ function createProduct(tuotteet) {
             div.appendChild(a[i]);
         }
 
-        olproducts.setAttribute("class", "productol")
+        olproducts.setAttribute("class", "productol");
         div.setAttribute("class","tuoteboxi");
         details.setAttribute("id", "details");
-        pforb.setAttribute("id", "button");
+        divbutton.setAttribute("id", "button");
         img.setAttribute("src",tuote.Kuva);
         img.setAttribute("width",200);
         img.setAttribute("height",200);
@@ -68,7 +68,7 @@ function createProduct(tuotteet) {
         details.innerText = "Tuotekuvaus";
 
         button.innerText = "Add to Cart";
-        button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+        button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+","+JSON.stringify(tuote)+")");
 
         var list = document.createElement("li");
 

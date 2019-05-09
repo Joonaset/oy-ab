@@ -82,7 +82,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
-            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+            button.setAttribute("onclick","addCart("+tuote+")");
 
             var list = document.createElement("li");
 
@@ -132,7 +132,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
-            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+            button.setAttribute("onclick","addCart("+tuote+")");
 
             var list = document.createElement("li");
 
@@ -166,9 +166,9 @@ function Tuotelajittelija(tuotteet) {
                 div.appendChild(a[i]);
             }
 
-            olproducts.setAttribute("class", "productol")
+            olproducts.setAttribute("class", "productol");
             div.setAttribute("class","tuoteboxi");
-            details.setAttribute("id", "details")
+            details.setAttribute("id", "details");
             img.setAttribute("src",tuote.Kuva);
             img.setAttribute("width",200);
             img.setAttribute("height",200);
@@ -181,7 +181,7 @@ function Tuotelajittelija(tuotteet) {
             details.innerText = "Tuotekuvaus";
 
             button.innerText = "Add to Cart";
-            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+            button.setAttribute("onclick","addCart("+tuote+")");
 
             var list = document.createElement("li");
 

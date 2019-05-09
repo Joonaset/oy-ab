@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oy-ab</title>
+    <link href ="css/oy-ab.css" type="text/css" rel="stylesheet" \>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <h1>Header</h1>
+</div>
+<div class="topnav">
+    <a class="active" href="etusivu.html">Etusivu</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="tiedot.html">Tietoja Meistä</a>
+    <a href="kirjaudu2.html">Kirjaudu Sis&auml;&auml;n</a>
+    <a href="ostoskori.html"> Kassalle<span class="badge"></span></a>
+    <h1>OyAb.com</h1>
+</div>
+
+
+<div class="content">
+    <div class="ostoskori">
+        <h2 id="ostoskori-otsikko">Ostoskorin sisältö:</h2>
+        <div>
+            <ol id="ostoskori-lista">
+            </ol>
+        </div>
+        <div id="ostoskori-napit" class="row">
+            <div class="col">
+                <button>Delete all products</button>
+            </div>
+            <div class="col">
+                <button>Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    Tänne voi laittaa jotain hienoa tekstiä esim. yhteystiedot tai copyrighteja.
+</div>
+<script>
+    var ostoskori = document.getElementById("ostoskori-lista");
+
+    var tuotteet = [];
+    var keys = [];
+    keys = Object.keys(localStorage);
+    keys.forEach(key => {
+        //alert(obj);
+        tuotteet.push(JSON.parse(localStorage.getItem(key)));
+    });
+    tuotteet.forEach(tuote => {
+        //luodaan yksi muuttuja
+        var i = 0;
+        //luodaan elementit
+       var list = document.createElement("div");
+       list.setAttribute("class","row");
+       var kuva = document.createElement("div");
+       var nimi = document.createElement("div");
+       var maara = document.createElement("div");
+       var hinta = document.createElement("div");
+       var poista = document.createElement("div");
+       var kuvaimg = document.createElement("img");
+       var nimip = document.createElement("p");
+       var hintap = document.createElement("p");
+       var maarainput = document.createElement("input");
+       var poistanappi = document.createElement("button");
+       var alldiv = [kuva,nimi,maara,hinta,poista];
+       var allchild = [kuvaimg,nimip,maarainput,hintap,poistanappi];
+
+       //tuotteen infot laitetaan elementtejen sisään
+        nimip.innerText = tuote.Nimi;
+        hintap.innerText = tuote.Hinta + " €";
+        kuvaimg.setAttribute("src", tuote.Kuva);
+        kuvaimg.setAttribute("width",200);
+        kuvaimg.setAttribute("height",200);
+        maarainput.setAttribute("type","number");
+        maarainput.setAttribute("min","1");
+        maarainput.setAttribute("value","1");
+        poistanappi.innerText = 'Delete item';
+
+       //kaikki divit jotka luodaan saavat classin col
+       alldiv.forEach(element => {
+            element.setAttribute("class","col");
+            element.appendChild(allchild[i]);
+            i++;
+            list.appendChild(element);
+       });
+
+       ostoskori.appendChild(list);
+    });
+</script>
+<!-- <script src="js/login.js"></script> -->
+</body>
+</html>
+
