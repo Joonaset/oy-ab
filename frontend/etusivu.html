@@ -84,6 +84,10 @@
         <script src="js/displayproducts.js"></script>
         <script>
             function addCart(id,tuote) {
+                if(localStorage.getItem(user) === '') {
+                    alert("Kirjaudu Sis&auml;&auml;n");
+                    window.location = "kirjaudu.html";
+                }
                 if (localStorage.getItem(id) === JSON.stringify(tuote)) {
                     alert("tuote on jo ostoskorissa")
                 }
