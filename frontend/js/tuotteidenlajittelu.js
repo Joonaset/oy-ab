@@ -45,147 +45,150 @@ function Tuotelajittelija(tuotteet) {
     };
 
     this.makeVaraosat = function (tuotteet) {
+
         var olproducts = document.createElement("ol");
+
         tuotteet.forEach(tuote => {
-            var listproducts = document.createElement("li");
-            var divelistproducts = document.createElement("div");
-            var spane = document.createElement("span");
-
-            var divlistproductinfo = document.createElement("div");
-
-            //divlistproductinfo <-- a <-- div <-- div <-- div <-- img
-
-            var athumbnaillink = document.createElement("a");
-
-            var divthumbnail = document.createElement("div");
-            var divthumbnailcontainer = document.createElement("div");
+            var div = document.createElement("div");
             var img = document.createElement("img");
-            img.setAttribute("src", tuote.Kuva);
-            img.setAttribute("width", 198);
-            img.setAttribute("height", 202);
+            var h1 = document.createElement("h1");
+            var price = document.createElement("price");
+            var details = document.createElement("p");
+            var divbutton = document.createElement("div");
+            var button = document.createElement("button");
+            divbutton.appendChild(button);
 
-            divthumbnailcontainer.appendChild(img);
-            divthumbnail.appendChild(divthumbnailcontainer);
-            athumbnaillink.appendChild(divthumbnail);
+            divbutton.setAttribute("id","addproduct");
+            divbutton.setAttribute("class","");
 
-            //divlistproductinfo <-- div <-- a div <-- div <-- span
-            var divproductinfo = document.createElement("div");
-            var aproductinfolink = document.createElement("a");
-            aproductinfolink.innerText = tuote.Nimi;
-            var divproductprice = document.createElement("div");
-            var divprice = document.createElement("div");
-            var spanprice = document.createElement("span");
-            spanprice.innerText = tuote.Hinta;
+            var a = [img,h1,price,details,divbutton];
 
-            divprice.appendChild(spanprice);
-            divproductprice.appendChild(divprice);
-            divproductinfo.appendChild(aproductinfolink);
-            divproductinfo.appendChild(divproductprice);
+            for (let i = 0; i < a.length; i++) {
+                div.appendChild(a[i]);
+            }
 
-            //next
-            divlistproductinfo.appendChild(athumbnaillink);
-            divlistproductinfo.appendChild(divproductinfo);
+            olproducts.setAttribute("class", "productol")
+            div.setAttribute("class","tuoteboxi");
+            details.setAttribute("id", "details")
+            img.setAttribute("src",tuote.Kuva);
+            img.setAttribute("width",200);
+            img.setAttribute("height",200);
 
-            divelistproducts.appendChild(divlistproductinfo);
-            listproducts.appendChild(divelistproducts);
-            olproducts.appendChild(listproducts);
+            h1.innerText = tuote.Nimi;
+
+            price.setAttribute("class","price");
+            price.innerText = tuote.Hinta;
+
+            details.innerText = "Tuotekuvaus";
+
+            button.innerText = "Add to Cart";
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+
+            var list = document.createElement("li");
+
+            list.appendChild(div);
+            olproducts.appendChild(list);
+
+
         });
         document.getElementById("varaosat-lista").appendChild(olproducts);
     };
 
     this.makeTarvikkeet = function (tuotteet) {
+
         var olproducts = document.createElement("ol");
+
         tuotteet.forEach(tuote => {
-            var listproducts = document.createElement("li");
-            var divelistproducts = document.createElement("div");
-            var spane = document.createElement("span");
-
-            var divlistproductinfo = document.createElement("div");
-
-            //divlistproductinfo <-- a <-- div <-- div <-- div <-- img
-
-            var athumbnaillink = document.createElement("a");
-
-            var divthumbnail = document.createElement("div");
-            var divthumbnailcontainer = document.createElement("div");
+            var div = document.createElement("div");
             var img = document.createElement("img");
-            img.setAttribute("src", tuote.Kuva);
-            img.setAttribute("width", 198);
-            img.setAttribute("height", 202);
+            var h1 = document.createElement("h1");
+            var price = document.createElement("price");
+            var details = document.createElement("p");
+            var divbutton = document.createElement("div");
+            var button = document.createElement("button");
+            divbutton.appendChild(button);
 
-            divthumbnailcontainer.appendChild(img);
-            divthumbnail.appendChild(divthumbnailcontainer);
-            athumbnaillink.appendChild(divthumbnail);
+            divbutton.setAttribute("id","addproduct");
+            divbutton.setAttribute("class","");
 
-            //divlistproductinfo <-- div <-- a div <-- div <-- span
-            var divproductinfo = document.createElement("div");
-            var aproductinfolink = document.createElement("a");
-            aproductinfolink.innerText = tuote.Nimi;
-            var divproductprice = document.createElement("div");
-            var divprice = document.createElement("div");
-            var spanprice = document.createElement("span");
-            spanprice.innerText = tuote.Hinta;
+            var a = [img,h1,price,details,divbutton];
 
-            divprice.appendChild(spanprice);
-            divproductprice.appendChild(divprice);
-            divproductinfo.appendChild(aproductinfolink);
-            divproductinfo.appendChild(divproductprice);
+            for (let i = 0; i < a.length; i++) {
+                div.appendChild(a[i]);
+            }
 
-            //next
-            divlistproductinfo.appendChild(athumbnaillink);
-            divlistproductinfo.appendChild(divproductinfo);
+            olproducts.setAttribute("class", "productol")
+            div.setAttribute("class","tuoteboxi");
+            details.setAttribute("id", "details")
+            img.setAttribute("src",tuote.Kuva);
+            img.setAttribute("width",200);
+            img.setAttribute("height",200);
 
-            divelistproducts.appendChild(divlistproductinfo);
-            listproducts.appendChild(divelistproducts);
-            olproducts.appendChild(listproducts);
+            h1.innerText = tuote.Nimi;
+
+            price.setAttribute("class","price");
+            price.innerText = tuote.Hinta;
+
+            details.innerText = "Tuotekuvaus";
+
+            button.innerText = "Add to Cart";
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+
+            var list = document.createElement("li");
+
+            list.appendChild(div);
+            olproducts.appendChild(list);
+
+
         });
         document.getElementById("tarvikkeet-lista").appendChild(olproducts);
     };
     this.makeMuut = function (tuotteet) {
+
         var olproducts = document.createElement("ol");
+
         tuotteet.forEach(tuote => {
-            var listproducts = document.createElement("li");
-            var divelistproducts = document.createElement("div");
-            var spane = document.createElement("span");
-
-            var divlistproductinfo = document.createElement("div");
-
-            //divlistproductinfo <-- a <-- div <-- div <-- div <-- img
-
-            var athumbnaillink = document.createElement("a");
-
-            var divthumbnail = document.createElement("div");
-            var divthumbnailcontainer = document.createElement("div");
+            var div = document.createElement("div");
             var img = document.createElement("img");
-            img.setAttribute("src", tuote.Kuva);
-            img.setAttribute("width", 198);
-            img.setAttribute("height", 202);
+            var h1 = document.createElement("h1");
+            var price = document.createElement("price");
+            var details = document.createElement("p");
+            var divbutton = document.createElement("div");
+            var button = document.createElement("button");
+            divbutton.appendChild(button);
 
-            divthumbnailcontainer.appendChild(img);
-            divthumbnail.appendChild(divthumbnailcontainer);
-            athumbnaillink.appendChild(divthumbnail);
+            divbutton.setAttribute("id","addproduct");
+            divbutton.setAttribute("class","");
 
-            //divlistproductinfo <-- div <-- a div <-- div <-- span
-            var divproductinfo = document.createElement("div");
-            var aproductinfolink = document.createElement("a");
-            aproductinfolink.innerText = tuote.Nimi;
-            var divproductprice = document.createElement("div");
-            var divprice = document.createElement("div");
-            var spanprice = document.createElement("span");
-            spanprice.innerText = tuote.Hinta;
+            var a = [img,h1,price,details,divbutton];
 
-            divprice.appendChild(spanprice);
-            divproductprice.appendChild(divprice);
-            divproductinfo.appendChild(aproductinfolink);
-            divproductinfo.appendChild(divproductprice);
+            for (let i = 0; i < a.length; i++) {
+                div.appendChild(a[i]);
+            }
 
-            //next
-            divlistproductinfo.appendChild(athumbnaillink);
-            divlistproductinfo.appendChild(divproductinfo);
+            olproducts.setAttribute("class", "productol")
+            div.setAttribute("class","tuoteboxi");
+            details.setAttribute("id", "details")
+            img.setAttribute("src",tuote.Kuva);
+            img.setAttribute("width",200);
+            img.setAttribute("height",200);
 
-            divelistproducts.appendChild(divlistproductinfo);
-            listproducts.appendChild(divelistproducts);
-            olproducts.appendChild(listproducts);
+            h1.innerText = tuote.Nimi;
+
+            price.setAttribute("class","price");
+            price.innerText = tuote.Hinta;
+
+            details.innerText = "Tuotekuvaus";
+
+            button.innerText = "Add to Cart";
+            button.setAttribute("onclick","addCart("+tuote.Tuotetunnus+")");
+
+            var list = document.createElement("li");
+
+            list.appendChild(div);
+            olproducts.appendChild(list);
+
+
         });
         document.getElementById("muut-lista").appendChild(olproducts);
     };

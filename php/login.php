@@ -2,11 +2,9 @@
 // login.php returns json format of
 include 'DBController.php';
 $db_handle = new DBController();
-
 $ID = $_POST['email'];
 $PASS = $_POST['pass'];
 $AUTH = base64_encode($ID.$PASS);
-
 $sql = "SELECT * FROM kayttaja WHERE Salasana = ?";
 if (!($prepare = $db_handle->db()->prepare($sql))) { //Returns true if preparation does not work
 }
