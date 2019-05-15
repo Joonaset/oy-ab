@@ -85,7 +85,9 @@ CREATE TABLE IF NOT EXISTS `tuotetyyppi` (
 /*!40000 ALTER TABLE `tuotetyyppi` DISABLE KEYS */;
 INSERT INTO `tuotetyyppi` (`Nimi`, `Kuvaus`, `Hinta`, `Tuotetunnus`, `Kuva`) VALUES
 	('Meisseli', 'Tyokalu', 10, 1, '../kuvat/meisseli.jpg'),
-	('Vasara', 'Tyokalu', 5, 2, '../kuvat/vasara.jpg');
+	('Vasara', 'Tyokalu', 5, 2, '../kuvat/vasara.jpg'),
+	('Ruuvi', 'Varaosa', 1, 3, '../kuvat/ruuvi.jpg'),
+	('Olut', 'Muut tuotteet', 8, 4, '../kuvat/olut.jpg');
 /*!40000 ALTER TABLE `tuotetyyppi` ENABLE KEYS */;
 
 -- Dumping structure for taulu oy-ab.varasto
